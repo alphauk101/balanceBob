@@ -25,5 +25,15 @@ void setup()
 
 void loop()
 {
+  //get the xaxis
+  rawAxis raw = axl.getAllAxis();
+  int axis = raw.Xaxis;
+  
+  axis = map(axis, 0, 280, 0, 255);
+  
+  Serial.println(axis);
+  
+  driver.forward(axis);
+  
   
 }
